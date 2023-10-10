@@ -13,11 +13,11 @@ if($type_requete == "POST")
 		$trameEnttec[4]=0x4e;$trameEnttec[5]=0x65;$trameEnttec[6]=0x74;$trameEnttec[7]=0x00;
 		$trameEnttec[8]=0x00;$trameEnttec[9]=0x50;$trameEnttec[10]=0x00;$trameEnttec[11]=0x0e;
 		$trameEnttec[12]=0x00;$trameEnttec[13]=0x00;
-		$trameEnttec[14]=$donnees['univers']; //univers
+		$trameEnttec[14]=$donnees['0']; //univers
 		$trameEnttec[15]=0x00;$trameEnttec[16]=0x02;$trameEnttec[17]=0x00;
 		for($i=18;$i<530;$i++) $trameEnttec[$i]=0;
 		
-		$adDMX=$donnees['adresse'];
+		$adDMX=$donnees['172.20.21.183'];
 
 		$trameEnttec[18+$adDMX-1]=hexdec(substr($donnees['valeur'],0,2));
 		$trameEnttec[19+$adDMX-1]=hexdec(substr($donnees['valeur'],2,2));
