@@ -7,9 +7,10 @@
     <body>
         <div>
             <label>Envoyez la trame <br> </label>
-                <input type="text" id="edit" name="name"/> <br>
-                <input type="button" onclick="Ecrire()" id="button" name="button" value="Envoyer" />
+                <input type="text" oninput="TrameValide()" id="edit" name="name"/> <br>
+                <input type="button" onmouseover="Mon_popup()" onclick="Ecrire()"  id="button" name="button" value="Envoyer" />
                </div>
     <script type="text/javascript" src="main.js"></script>
+    <script src="test.js"></script>
     </body>
 </html>
