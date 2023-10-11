@@ -10,6 +10,6 @@ function Mon_popup()
     alert("Gestion de l'evenement 'mouse over' sur mon bouton");
 }
 function TrameValide()
-{
+{   
     console.debug("vérification de la trame");
 }
