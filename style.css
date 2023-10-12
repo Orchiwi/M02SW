@@ -19,7 +19,7 @@
     background-size: contain;
 }*/
 #rentrertrame {
-    height: 400px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -75,7 +75,8 @@ span {
     padding: 5px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    display: inline-block;
+    display: table;
+    margin: 0 auto;
 }
 
 /* Style pour les spans ayant la classe "vert" */
