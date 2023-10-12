@@ -14,13 +14,31 @@ function TrameValide()
     tramehexa=document.getElementById("edit").value;
     console.debug("vérification de la trame");
     if(tramehexa.length % 2==0){
-        document.getElementById("longueur").classList.remove('rouge');
-        document.getElementById("longueur").classList.add('vert');
+        
+        document.getElementById("longueur").className=('vert');
+        Taille = true
     }
     else {
-        document.getElementById("longueur").classList.remove('vert');
-        document.getElementById("longueur").classList.add('rouge');
+        
+        document.getElementById("longueur").className=('rouge');
+        Taille = false
         
     }
-   
-}
+    for(let i = 0; i < tramehexa.length; i++){
+        if(tramehexa[i]>= 0 && tramehexa[i]<= 9 || tramehexa.charAt(i)>= "A" && tramehexa.charAt(i)<= "F"){
+            
+            document.getElementById("hexa").className=('vert');
+            document.getElementById("button").classList.remove('Hide');
+          // console.log("bon");
+            Type = true
+        }    
+        else {
+            document.getElementById("hexa").className=('rouge');
+         document.getElementById("button").classList.add('Hide');
+        //  console.log("faux");
+            Type = false
+            break
+        }
+    }
+    if ()
+}      
