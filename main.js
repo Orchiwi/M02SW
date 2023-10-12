@@ -9,6 +9,9 @@ function Mon_popup()
 {
     alert("Gestion de l'evenement 'mouse over' sur mon bouton");
 }
+
+document.getElementById("button").style.visibility="hidden"
+
 function TrameValide()
 {   
     tramehexa=document.getElementById("edit").value;
@@ -28,17 +31,22 @@ function TrameValide()
         if(tramehexa[i]>= 0 && tramehexa[i]<= 9 || tramehexa.charAt(i)>= "A" && tramehexa.charAt(i)<= "F"){
             
             document.getElementById("hexa").className=('vert');
-            document.getElementById("button").classList.remove('Hide');
           // console.log("bon");
             Type = true
         }    
         else {
             document.getElementById("hexa").className=('rouge');
-         document.getElementById("button").classList.add('Hide');
         //  console.log("faux");
             Type = false
             break
         }
     }
-    if ()
-}      
+     if (Type == false || Taille == false || document.getElementById("edit").value == ""){
+
+    document.getElementById("button").style.visibility="hidden";
+    }
+    else{
+    document.getElementById("button").style.visibility="visible";
+    }
+
+}
