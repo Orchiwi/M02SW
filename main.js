@@ -11,5 +11,16 @@ function Mon_popup()
 }
 function TrameValide()
 {   
+    tramehexa=document.getElementById("edit").value;
     console.debug("vérification de la trame");
+    if(tramehexa.length % 2==0){
+        document.getElementById("longueur").classList.remove('rouge');
+        document.getElementById("longueur").classList.add('vert');
+    }
+    else {
+        document.getElementById("longueur").classList.remove('vert');
+        document.getElementById("longueur").classList.add('rouge');
+        
+    }
+   
 }
