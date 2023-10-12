@@ -1,25 +1,103 @@
-div{  height: 400px;
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.row {
+    display: flex;
+  }
+  
+  /* Create three equal columns that sits next to each other */
+  .column {
+    flex: 25%;
+    padding: 5px;
+  }
+#c1,#c2,#c3,#c4{
+    background-color: #0074d9;
+}
+
+/*body{
+    background-image: url(file/SPOT\ EX-15.jpg), url(file/scaner-profesional-30w-led-dmx-intiscan-beamz-eca.jpg), url(file/OIP.jpg), url(file/5x-15W-LED-Mini-Moving-Head-Wash_720x600.jpg);
+    background-position: right bottom, left top, left bottom, right top;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-size: contain;
+}*/
+#rentrertrame {
+    height: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;}
-label{font-size: 40px;
-    margin-bottom: 40px;
-    }
-#edit{
-    width: 600px;
-    height: 25px;
+    text-align: center;
 
-}
-#button{margin-top: 20px;
-    width: 90px;
-    height: 25px;   
     
 }
-.vert{
-    color: green;
+
+/* Ajout de règles spécifiques pour les éléments de la page */
+label {
+    font-size: 40px;
+    margin-bottom: 40px;
+    font-weight:bold;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 0px 10px 0px 10px;
+    background: rgb(255,146,0);
+    background: linear-gradient(90deg, rgba(255,146,0,1) 0%, rgba(255,231,0,0.23433874709976799) 100%);
+    
 }
-.rouge{
+
+#edit {
+    width: 41%;
+    height: 50px;
+    font-size: 40px;
+    
+      }
+
+    /*width: 600px;
+    height: 25px;*/
+
+
+#button {
+    margin-top: 20px;
+    width: 90px;
+    height: 25px;
+    background-color: #0074d9;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#button:hover {
+    background-color: #0056b3;
+}
+
+/* Style de base pour les spans */
+span {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* Style pour les spans ayant la classe "vert" */
+span.vert {
+    color: green;
+    background-color: #e0f0e0;
+}
+
+/* Style pour les spans ayant la classe "rouge" */
+span.rouge {
     color: red;
+    background-color: #f0e0e0;
+}
+
+/* Style pour les spans ayant un ID spécifique */
+span#longueur {
+    font-size: 24px;
+    text-decoration: underline;
+}
+
+/* Style pour les spans ayant un autre ID spécifique */
+span#hexa {
+    font-size: 24px;
+    text-decoration: underline;
 }
