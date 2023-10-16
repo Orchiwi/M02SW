@@ -50,3 +50,97 @@ function TrameValide()
     }
 
 }
+
+var s1 = document.getElementById("scrollbar1");
+s1.addEventListener('change',function () {
+    var tramehexa=document.getElementById("edit")
+    trame = tramehexa.value
+    var entier=Math.abs(s1.value).toString(16).toUpperCase();
+    var numeroCanal = 1;
+    if(s1.value<16) entier="0"+entier;
+    var indice= (numeroCanal-1)*2;
+    trame=trame.substring(0,indice)+entier+trame.substring(indice+2,trame.length);
+    document.getElementById("edit").value=trame;
+    Ecrire();
+
+}, false);
+
+
+
+
+var s2 = document.getElementById("scrollbar2");
+s2.addEventListener('change',function () {
+    var tramehexa=document.getElementById("edit")
+    trame = tramehexa.value
+    var entier=Math.abs(s2.value).toString(16).toUpperCase();
+    var numeroCanal = 2;
+    if(s2.value<16) entier="0"+entier;
+    var indice= (numeroCanal-1)*2;
+    trame=trame.substring(0,indice)+entier+trame.substring(indice+2,trame.length);
+    document.getElementById("edit").value=trame;
+    Ecrire();
+
+}, false);
+
+
+var s3 = document.getElementById("scrollbar2");
+s3.addEventListener('change',function () {
+    var tramehexa=document.getElementById("edit")
+    trame = tramehexa.value
+    var entier=Math.abs(s3.value).toString(16).toUpperCase();
+    var numeroCanal = 3;
+    if(s3.value<16) entier="0"+entier;
+    var indice= (numeroCanal-1)*2;
+    trame=trame.substring(0,indice)+entier+trame.substring(indice+2,trame.length);
+    document.getElementById("edit").value=trame;
+    Ecrire();
+
+}, false);
+
+
+
+var s4 = document.getElementById("scrollbar1");
+s4.addEventListener('change',function () {
+    var tramehexa=document.getElementById("edit")
+    trame = tramehexa.value
+    var entier=Math.abs(s4.value).toString(16).toUpperCase();
+    var numeroCanal = 1;
+    if(s4.value<16) entier="0"+entier;
+    var indice= (numeroCanal-1)*2;
+    trame=trame.substring(0,indice)+entier+trame.substring(indice+2,trame.length);
+    document.getElementById("edit").value=trame;
+    Ecrire();
+
+}, false);
+
+
+
+
+var s5 = document.getElementById("scrollbar2");
+s5.addEventListener('change',function () {
+    var tramehexa=document.getElementById("edit")
+    trame = tramehexa.value
+    var entier=Math.abs(s5.value).toString(16).toUpperCase();
+    var numeroCanal = 2;
+    if(s5.value<16) entier="0"+entier;
+    var indice= (numeroCanal-1)*2;
+    trame=trame.substring(0,indice)+entier+trame.substring(indice+2,trame.length);
+    document.getElementById("edit").value=trame;
+    Ecrire();
+
+}, false);
+
+
+var s6 = document.getElementById("scrollbar2");
+s6.addEventListener('change',function () {
+    var tramehexa=document.getElementById("edit")
+    trame = tramehexa.value
+    var entier=Math.abs(s6.value).toString(16).toUpperCase();
+    var numeroCanal = 3;
+    if(s6.value<16) entier="0"+entier;
+    var indice= (numeroCanal-1)*2;
+    trame=trame.substring(0,indice)+entier+trame.substring(indice+2,trame.length);
+    document.getElementById("edit").value=trame;
+    Ecrire();
+
+}, false);

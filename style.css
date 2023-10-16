@@ -19,7 +19,7 @@
     background-size: contain;
 }*/
 #rentrertrame {
-    height: 300px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -91,14 +91,17 @@ span.rouge {
     background-color: #f0e0e0;
 }
 
-/* Style pour les spans ayant un ID spécifique */
+/* Style pour les spans ID=longueur */
 span#longueur {
     font-size: 24px;
     text-decoration: underline;
 }
 
-/* Style pour les spans ayant un autre ID spécifique */
+/* Style pour les spans ID=hexa */
 span#hexa {
     font-size: 24px;
     text-decoration: underline;
+}
+input.scrollbar {
+    -webkit-appearance: slider-vertical;
 }
