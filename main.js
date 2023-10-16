@@ -51,6 +51,7 @@ function TrameValide()
 
 }
 
+
 var s1 = document.getElementById("scrollbar1");
 s1.addEventListener('change',function () {
     var tramehexa=document.getElementById("edit")
@@ -83,7 +84,7 @@ s2.addEventListener('change',function () {
 }, false);
 
 
-var s3 = document.getElementById("scrollbar2");
+var s3 = document.getElementById("scrollbar3");
 s3.addEventListener('change',function () {
     var tramehexa=document.getElementById("edit")
     trame = tramehexa.value
@@ -99,12 +100,12 @@ s3.addEventListener('change',function () {
 
 
 
-var s4 = document.getElementById("scrollbar1");
+var s4 = document.getElementById("scrollbar4");
 s4.addEventListener('change',function () {
     var tramehexa=document.getElementById("edit")
     trame = tramehexa.value
     var entier=Math.abs(s4.value).toString(16).toUpperCase();
-    var numeroCanal = 1;
+    var numeroCanal = 4;
     if(s4.value<16) entier="0"+entier;
     var indice= (numeroCanal-1)*2;
     trame=trame.substring(0,indice)+entier+trame.substring(indice+2,trame.length);
@@ -116,12 +117,12 @@ s4.addEventListener('change',function () {
 
 
 
-var s5 = document.getElementById("scrollbar2");
+var s5 = document.getElementById("scrollbar5");
 s5.addEventListener('change',function () {
     var tramehexa=document.getElementById("edit")
     trame = tramehexa.value
     var entier=Math.abs(s5.value).toString(16).toUpperCase();
-    var numeroCanal = 2;
+    var numeroCanal = 5;
     if(s5.value<16) entier="0"+entier;
     var indice= (numeroCanal-1)*2;
     trame=trame.substring(0,indice)+entier+trame.substring(indice+2,trame.length);
@@ -131,12 +132,12 @@ s5.addEventListener('change',function () {
 }, false);
 
 
-var s6 = document.getElementById("scrollbar2");
+var s6 = document.getElementById("scrollbar6");
 s6.addEventListener('change',function () {
     var tramehexa=document.getElementById("edit")
     trame = tramehexa.value
     var entier=Math.abs(s6.value).toString(16).toUpperCase();
-    var numeroCanal = 3;
+    var numeroCanal = 6;
     if(s6.value<16) entier="0"+entier;
     var indice= (numeroCanal-1)*2;
     trame=trame.substring(0,indice)+entier+trame.substring(indice+2,trame.length);
