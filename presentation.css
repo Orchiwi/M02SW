@@ -47,9 +47,8 @@ h2 {
     background-color: rgb(88, 31, 117);
     color: #f4ee95;
     border: none;
-    /*border-radius: 200px;*/
-    border-top-left-radius: 200px;
-    border-bottom-left-radius: 200px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
     cursor: pointer;
     float: right;
     clear: both;

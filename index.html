@@ -6,8 +6,9 @@
     </head>
     <body>
         <div id="rentrertrame">
-            <label>Envoyez la trame <br> </label>
+            <label id="Principal">Envoyez la trame:</label>
             <input type="text" oninput="TrameValide()" id="edit" name="name"/> <br>
+            <label id="Secondaire">Canal de depart:</label>
             <input type="text" id="ChoisirCanal">
             <input type="button"  onclick="Ecrire()"  id="button" name="button" value="Envoyer">
             
@@ -20,7 +21,7 @@
                 <input type="range" min="0" max="255" value="150" class="scrollbar" id="scrollbar5">
                 <input type="range" min="0" max="255" value="150" class="scrollbar" id="scrollbar6">
             </div>
-                <input type="button"  onclick="fulloff()"  id="fulloff" value="fulloff">
+                <input type="button"  onclick="fulloff()"  id="fulloff" value="fulloff"> <br>
                 <input type="button"  onclick="fullon()"  id="fullon" value="fullon">
             
         </div>
