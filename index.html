@@ -8,14 +8,21 @@
         <div id="rentrertrame">
             <label>Envoyez la trame <br> </label>
             <input type="text" oninput="TrameValide()" id="edit" name="name"/> <br>
+            <input type="text" id="ChoisirCanal">
             <input type="button"  onclick="Ecrire()"  id="button" name="button" value="Envoyer">
+            
             <!-- dans button onmouseover="Mon_popup()" -->
-            <input type="range" min="0" max="255" value="150" class="scrollbar" id="scrollbar1">
-            <input type="range" min="0" max="255" value="150" class="scrollbar" id="scrollbar2">
-            <input type="range" min="0" max="255" value="150" class="scrollbar" id="scrollbar3">
-            <input type="range" min="0" max="255" value="150" class="scrollbar" id="scrollbar4">
-            <input type="range" min="0" max="255" value="150" class="scrollbar" id="scrollbar5">
-            <input type="range" min="0" max="255" value="150" class="scrollbar" id="scrollbar6">
+            <div id=" scrolllist">
+                <input type="range" min="0" max="255" value="150" class="scrollbar" id="scrollbar1">
+                <input type="range" min="0" max="255" value="150" class="scrollbar" id="scrollbar2">
+                <input type="range" min="0" max="255" value="150" class="scrollbar" id="scrollbar3">
+                <input type="range" min="0" max="255" value="150" class="scrollbar" id="scrollbar4">
+                <input type="range" min="0" max="255" value="150" class="scrollbar" id="scrollbar5">
+                <input type="range" min="0" max="255" value="150" class="scrollbar" id="scrollbar6">
+            </div>
+                <input type="button"  onclick="fulloff()"  id="fulloff" value="fulloff">
+                <input type="button"  onclick="fullon()"  id="fullon" value="fullon">
+            
         </div>
 
 

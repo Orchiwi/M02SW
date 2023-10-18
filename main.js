@@ -10,7 +10,7 @@ function Mon_popup()
     alert("Gestion de l'evenement 'mouse over' sur mon bouton");
 }
 
-document.getElementById("button").style.visibility="hidden"
+
 
 function TrameValide()
 {   
@@ -49,15 +49,17 @@ function TrameValide()
     document.getElementById("button").style.visibility="visible";
     }
 
+    
 }
 
+var Canaldepart = document.getElementById("ChoisirCanal").value
 
 var s1 = document.getElementById("scrollbar1");
 s1.addEventListener('change',function () {
     var tramehexa=document.getElementById("edit")
     trame = tramehexa.value
     var entier=Math.abs(s1.value).toString(16).toUpperCase();
-    var numeroCanal = 1;
+    var numeroCanal = Canaldepart + 1;
     if(s1.value<16) entier="0"+entier;
     var indice= (numeroCanal-1)*2;
     trame=trame.substring(0,indice)+entier+trame.substring(indice+2,trame.length);
@@ -74,7 +76,7 @@ s2.addEventListener('change',function () {
     var tramehexa=document.getElementById("edit")
     trame = tramehexa.value
     var entier=Math.abs(s2.value).toString(16).toUpperCase();
-    var numeroCanal = 2;
+    var numeroCanal = Canaldepart + 2;
     if(s2.value<16) entier="0"+entier;
     var indice= (numeroCanal-1)*2;
     trame=trame.substring(0,indice)+entier+trame.substring(indice+2,trame.length);
@@ -89,7 +91,7 @@ s3.addEventListener('change',function () {
     var tramehexa=document.getElementById("edit")
     trame = tramehexa.value
     var entier=Math.abs(s3.value).toString(16).toUpperCase();
-    var numeroCanal = 3;
+    var numeroCanal = Canaldepart + 3;
     if(s3.value<16) entier="0"+entier;
     var indice= (numeroCanal-1)*2;
     trame=trame.substring(0,indice)+entier+trame.substring(indice+2,trame.length);
@@ -105,7 +107,7 @@ s4.addEventListener('change',function () {
     var tramehexa=document.getElementById("edit")
     trame = tramehexa.value
     var entier=Math.abs(s4.value).toString(16).toUpperCase();
-    var numeroCanal = 4;
+    var numeroCanal = Canaldepart + 4;
     if(s4.value<16) entier="0"+entier;
     var indice= (numeroCanal-1)*2;
     trame=trame.substring(0,indice)+entier+trame.substring(indice+2,trame.length);
@@ -122,7 +124,7 @@ s5.addEventListener('change',function () {
     var tramehexa=document.getElementById("edit")
     trame = tramehexa.value
     var entier=Math.abs(s5.value).toString(16).toUpperCase();
-    var numeroCanal = 5;
+    var numeroCanal = Canaldepart + 5;
     if(s5.value<16) entier="0"+entier;
     var indice= (numeroCanal-1)*2;
     trame=trame.substring(0,indice)+entier+trame.substring(indice+2,trame.length);
@@ -137,7 +139,7 @@ s6.addEventListener('change',function () {
     var tramehexa=document.getElementById("edit")
     trame = tramehexa.value
     var entier=Math.abs(s6.value).toString(16).toUpperCase();
-    var numeroCanal = 6;
+    var numeroCanal = Canaldepart + 6;
     if(s6.value<16) entier="0"+entier;
     var indice= (numeroCanal-1)*2;
     trame=trame.substring(0,indice)+entier+trame.substring(indice+2,trame.length);
@@ -145,3 +147,26 @@ s6.addEventListener('change',function () {
     Ecrire();
 
 }, false);
+
+
+
+function fulloff() {
+    document.getElementById("scrollbar1").value=0;
+    document.getElementById("scrollbar2").value=0;
+    document.getElementById("scrollbar3").value=0;
+    document.getElementById("scrollbar4").value=0;
+    document.getElementById("scrollbar5").value=0;
+    document.getElementById("scrollbar6").value=0;
+    document.getElementById("edit").value="000000000000";
+
+}
+
+    function fullon() {
+    document.getElementById("scrollbar1").value=255;
+    document.getElementById("scrollbar2").value=255;
+    document.getElementById("scrollbar3").value=255;
+    document.getElementById("scrollbar4").value=255;
+    document.getElementById("scrollbar5").value=255;
+    document.getElementById("scrollbar6").value=255;
+    document.getElementById("edit").value="FFFFFFFFFFFF";
+}
