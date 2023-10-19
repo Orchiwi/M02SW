@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="Grid.css">
     <head>
 
     </head>
     <body>
+        
+        <header><h1>Console DMX 6 canaux</h1></header>
+        <section>
         <div id="rentrertrame">
+            <br>
             <label id="Principal">Envoyez la trame:</label>
             <input type="text" oninput="TrameValide()" id="edit" name="name"/> <br>
             <label id="Secondaire">Canal de depart:</label>
@@ -44,11 +49,20 @@
             <div class="column" id="c4">
                 <img src="file/scaner-profesional-30w-led-dmx-intiscan-beamz-eca.png" style="width:100%" id="img4">
               </div>
-          </div>
-       
-           
-          </div>
-               
+        </div>
+        </section>
+        <footer>
+            <div class="row">
+                    <p id="foot">M01</p>
+                    <p id="foot">M02</p>
+                    <p id="foot">M03</p>
+        </footer>
+
+
+
+
+
+
     <script type="text/javascript" src="main.js"></script>
     <script src="test.js"></script>
     </body>

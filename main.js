@@ -2,7 +2,7 @@ function Ecrire()
 {   var valeur=document.getElementById("edit").value;
     var client = new XMLHttpRequest();
     client.open("POST","client_udp.php", false);
-    donneesJson='{"univers":"0","adresse":"172.20.21.183","valeur":"'+valeur+'"}';
+    donneesJson='{"univers":"0","adresse":"1","valeur":"'+valeur+'"}';
     client.send(donneesJson);
 }
 function Mon_popup()
@@ -57,7 +57,7 @@ var Canaldepart = document.getElementById("ChoisirCanal").value
 var s1 = document.getElementById("scrollbar1");
 s1.addEventListener('change',function () {
     var tramehexa=document.getElementById("edit")
-    trame = tramehexa.value
+    trame = tramehexa.value;
     var entier=Math.abs(s1.value).toString(16).toUpperCase();
     var numeroCanal = Canaldepart + 1;
     if(s1.value<16) entier="0"+entier;
@@ -74,7 +74,7 @@ s1.addEventListener('change',function () {
 var s2 = document.getElementById("scrollbar2");
 s2.addEventListener('change',function () {
     var tramehexa=document.getElementById("edit")
-    trame = tramehexa.value
+    trame = tramehexa.value;
     var entier=Math.abs(s2.value).toString(16).toUpperCase();
     var numeroCanal = Canaldepart + 2;
     if(s2.value<16) entier="0"+entier;
@@ -89,7 +89,7 @@ s2.addEventListener('change',function () {
 var s3 = document.getElementById("scrollbar3");
 s3.addEventListener('change',function () {
     var tramehexa=document.getElementById("edit")
-    trame = tramehexa.value
+    trame = tramehexa.value;
     var entier=Math.abs(s3.value).toString(16).toUpperCase();
     var numeroCanal = Canaldepart + 3;
     if(s3.value<16) entier="0"+entier;
@@ -105,7 +105,7 @@ s3.addEventListener('change',function () {
 var s4 = document.getElementById("scrollbar4");
 s4.addEventListener('change',function () {
     var tramehexa=document.getElementById("edit")
-    trame = tramehexa.value
+    trame = tramehexa.value;
     var entier=Math.abs(s4.value).toString(16).toUpperCase();
     var numeroCanal = Canaldepart + 4;
     if(s4.value<16) entier="0"+entier;
@@ -122,7 +122,7 @@ s4.addEventListener('change',function () {
 var s5 = document.getElementById("scrollbar5");
 s5.addEventListener('change',function () {
     var tramehexa=document.getElementById("edit")
-    trame = tramehexa.value
+    trame = tramehexa.value;
     var entier=Math.abs(s5.value).toString(16).toUpperCase();
     var numeroCanal = Canaldepart + 5;
     if(s5.value<16) entier="0"+entier;
@@ -135,9 +135,9 @@ s5.addEventListener('change',function () {
 
 
 var s6 = document.getElementById("scrollbar6");
-s6.addEventListener('change',function () {
+s6.addEventListener('change',function (a) {
     var tramehexa=document.getElementById("edit")
-    trame = tramehexa.value
+    trame = tramehexa.value;
     var entier=Math.abs(s6.value).toString(16).toUpperCase();
     var numeroCanal = Canaldepart + 6;
     if(s6.value<16) entier="0"+entier;
@@ -158,6 +158,8 @@ function fulloff() {
     document.getElementById("scrollbar5").value=0;
     document.getElementById("scrollbar6").value=0;
     document.getElementById("edit").value="000000000000";
+    Ecrire()
+    
 
 }
 
@@ -169,4 +171,25 @@ function fulloff() {
     document.getElementById("scrollbar5").value=255;
     document.getElementById("scrollbar6").value=255;
     document.getElementById("edit").value="FFFFFFFFFFFF";
+    Ecrire()
+}
+
+function AES_encryptage() {
+    // La clé
+    var key = CryptoJS.enc.Hex.parse("0123456789abcdef0123456789abcdef");
+    // Le vecteur d'initialisation
+    var iv = CryptoJS.enc.Hex.parse("abcdef9876543210abcdef9876543210");
+    var texte_encrypte=CryptoJS.AZS.encrypt(document.getElementById("letexte").value, key, {iv:iv});
+    document.getElementById("letexteAES").innerHTML = texte_encrypte;
+    // Le texte encodé est convertit en base64 pour être envoyé
+    encrypted = texte_encrypte.ciphertext.toString(CryptoJS.enc.Base64);
+    var xh = new XMLHttpRequest();
+    xh.onreadystatechange = function () {
+        if (xh.readyState === 4 && xh.status === 200){
+            console.debug("REPONSE : " + xh.responseText);
+        }
+    }
+    xh.open("POST", "decrypt_in_php.php", true);
+    xh.setRequestHeader("Content-type", "application/json");
+    xh.send('{"encrypted":"'+encrypted+'"}');
 }
