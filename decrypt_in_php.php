@@ -2,7 +2,7 @@
     $postDataInJSON = file_get_contents ("php://input");
     $data = json_decode($postDataInJSON, true);
     // La clé
-    $key = pack ('H*','0123456789abcdef0123456789abcdef');
+    $key = pack('H*','0123456789abcdef0123456789abcdef');
     // Le vecteur d'initialisation
     $iv = pack('H*','abcdef9876543210abcdef9876543210');
     // La méthode de cryptage utilisée

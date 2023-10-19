@@ -1,8 +1,15 @@
 function Ecrire()
-{   var valeur=document.getElementById("edit").value;
+{   
+    var key = CryptoJS.enc.Hex.parse("0123456789abcdef0123456789abcdef");
+    // Le vecteur d'initialisation
+    var iv = CryptoJS.enc.Hex.parse("abcdef9876543210abcdef9876543210");
+    var texte_encrypte=CryptoJS.AES.encrypt(document.getElementById("edit").value, key, {iv:iv});
+    document.getElementById("edit").innerHTML = texte_encrypte;
+    // Le texte encodé est convertit en base64 pour être envoyé
+    encrypted = texte_encrypte.ciphertext.toString(CryptoJS.enc.Base64);
     var client = new XMLHttpRequest();
     client.open("POST","client_udp.php", false);
-    donneesJson='{"univers":"0","adresse":"1","valeur":"'+valeur+'"}';
+    donneesJson='{"univers":"0","adresse":"1","valeur":"'+encrypted+'"}';
     client.send(donneesJson);
 }
 function Mon_popup()
@@ -59,12 +66,12 @@ s1.addEventListener('change',function () {
     var tramehexa=document.getElementById("edit")
     trame = tramehexa.value;
     var entier=Math.abs(s1.value).toString(16).toUpperCase();
-    var numeroCanal = Canaldepart + 1;
+    var numeroCanal = 1;
     if(s1.value<16) entier="0"+entier;
     var indice= (numeroCanal-1)*2;
     trame=trame.substring(0,indice)+entier+trame.substring(indice+2,trame.length);
     document.getElementById("edit").value=trame;
-    Ecrire();
+    AES_encryptage()
 
 }, false);
 
@@ -76,12 +83,12 @@ s2.addEventListener('change',function () {
     var tramehexa=document.getElementById("edit")
     trame = tramehexa.value;
     var entier=Math.abs(s2.value).toString(16).toUpperCase();
-    var numeroCanal = Canaldepart + 2;
+    var numeroCanal = 2;
     if(s2.value<16) entier="0"+entier;
     var indice= (numeroCanal-1)*2;
     trame=trame.substring(0,indice)+entier+trame.substring(indice+2,trame.length);
     document.getElementById("edit").value=trame;
-    Ecrire();
+    Ecrire()
 
 }, false);
 
@@ -91,12 +98,12 @@ s3.addEventListener('change',function () {
     var tramehexa=document.getElementById("edit")
     trame = tramehexa.value;
     var entier=Math.abs(s3.value).toString(16).toUpperCase();
-    var numeroCanal = Canaldepart + 3;
+    var numeroCanal = 3;
     if(s3.value<16) entier="0"+entier;
     var indice= (numeroCanal-1)*2;
     trame=trame.substring(0,indice)+entier+trame.substring(indice+2,trame.length);
     document.getElementById("edit").value=trame;
-    Ecrire();
+    Ecrire()
 
 }, false);
 
@@ -107,12 +114,12 @@ s4.addEventListener('change',function () {
     var tramehexa=document.getElementById("edit")
     trame = tramehexa.value;
     var entier=Math.abs(s4.value).toString(16).toUpperCase();
-    var numeroCanal = Canaldepart + 4;
+    var numeroCanal = 4;
     if(s4.value<16) entier="0"+entier;
     var indice= (numeroCanal-1)*2;
     trame=trame.substring(0,indice)+entier+trame.substring(indice+2,trame.length);
     document.getElementById("edit").value=trame;
-    Ecrire();
+    Ecrire()
 
 }, false);
 
@@ -124,12 +131,12 @@ s5.addEventListener('change',function () {
     var tramehexa=document.getElementById("edit")
     trame = tramehexa.value;
     var entier=Math.abs(s5.value).toString(16).toUpperCase();
-    var numeroCanal = Canaldepart + 5;
+    var numeroCanal = 5;
     if(s5.value<16) entier="0"+entier;
     var indice= (numeroCanal-1)*2;
     trame=trame.substring(0,indice)+entier+trame.substring(indice+2,trame.length);
     document.getElementById("edit").value=trame;
-    Ecrire();
+    Ecrire()
 
 }, false);
 
@@ -139,12 +146,12 @@ s6.addEventListener('change',function (a) {
     var tramehexa=document.getElementById("edit")
     trame = tramehexa.value;
     var entier=Math.abs(s6.value).toString(16).toUpperCase();
-    var numeroCanal = Canaldepart + 6;
+    var numeroCanal = 6;
     if(s6.value<16) entier="0"+entier;
     var indice= (numeroCanal-1)*2;
     trame=trame.substring(0,indice)+entier+trame.substring(indice+2,trame.length);
     document.getElementById("edit").value=trame;
-    Ecrire();
+    Ecrire()
 
 }, false);
 
@@ -179,8 +186,8 @@ function AES_encryptage() {
     var key = CryptoJS.enc.Hex.parse("0123456789abcdef0123456789abcdef");
     // Le vecteur d'initialisation
     var iv = CryptoJS.enc.Hex.parse("abcdef9876543210abcdef9876543210");
-    var texte_encrypte=CryptoJS.AZS.encrypt(document.getElementById("letexte").value, key, {iv:iv});
-    document.getElementById("letexteAES").innerHTML = texte_encrypte;
+    var texte_encrypte=CryptoJS.AES.encrypt(document.getElementById("edit").value, key, {iv:iv});
+    document.getElementById("edit").innerHTML = texte_encrypte;
     // Le texte encodé est convertit en base64 pour être envoyé
     encrypted = texte_encrypte.ciphertext.toString(CryptoJS.enc.Base64);
     var xh = new XMLHttpRequest();

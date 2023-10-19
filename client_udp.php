@@ -3,6 +3,14 @@ $type_requete = $_SERVER["REQUEST_METHOD"];
 if($type_requete == "POST")
 {	 $donneesRecues_json=file_get_contents("php://input");
 	$donnees=json_decode($donneesRecues_json,true);
+	
+	$key = pack('H*','0123456789abcdef0123456789abcdef');
+    // Le vecteur d'initialisation
+    $iv = pack('H*','abcdef9876543210abcdef9876543210');
+    // La méthode de cryptage utilisée
+    $method = 'aes-128-cbc'; // C'est la méthode de cryptage utilisée par CryptoJS.AES.encrypt()
+    $decrypted=openssl_decrypt(base64_decode($donnees['valeur']),$method,$key,OPENSSL_RAW_DATA,$iv);
+	$donnees['valeur']=$decrypted;
 
 	$sock = socket_create (AF_INET, SOCK_DGRAM, 0 );//
     if($sock!=null)
