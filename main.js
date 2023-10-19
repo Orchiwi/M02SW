@@ -71,7 +71,7 @@ s1.addEventListener('change',function () {
     var indice= (numeroCanal-1)*2;
     trame=trame.substring(0,indice)+entier+trame.substring(indice+2,trame.length);
     document.getElementById("edit").value=trame;
-    AES_encryptage()
+    Ecrire()
 
 }, false);
 
