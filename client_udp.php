@@ -48,7 +48,7 @@ if($type_requete == "POST")
 		$nbOctetsEmis = socket_sendto($sock, $chaine, strlen($chaine), 0, "172.20.21.183", 6454);
 		//$nbOctetsEmis = socket_sendto($sock, $chaine, strlen($chaine), 0, "192.168.1.36", 6454);
         echo '<p>nombre d octets emis : '.$nbOctetsEmis.'</p>';
-        fclose($sock);
+        socket_close($sock);
     }
 }
 ?>
