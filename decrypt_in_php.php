@@ -9,3 +9,4 @@
     $method = 'aes-128-cbc'; // C'est la méthode de cryptage utilisée par CryptoJS.AES.encrypt()
     $decrypted=openssl_decrypt(base64_decode($data['encrypted']),$method,$key,OPENSSL_RAW_DATA,$iv);
     echo '{"dechiffrement":"'.$decrypted.'"}'; // Sortie: 'Texte décrypté'
+?>
