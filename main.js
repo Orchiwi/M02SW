@@ -9,7 +9,7 @@ function Ecrire()
     encrypted = texte_encrypte.ciphertext.toString(CryptoJS.enc.Base64);
     var client = new XMLHttpRequest();
     client.open("POST","client_udp.php", false);
-    donneesJson='{"univers":"0","adresse":"1","valeur":"'+encrypted+'"}';
+    donneesJson='{"univers":"3","adresse":"1","valeur":"'+encrypted+'"}';
     client.send(donneesJson);
 }
 function Mon_popup()

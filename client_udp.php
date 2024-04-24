@@ -45,8 +45,8 @@ if($type_requete == "POST")
 
 		echo '<p>Message a envoyé : '.$donnees['valeur'].'</p>';
 		echo '<p>Longueur du message a envoyé : '.strlen($donnees['valeur']).'</p>';
-		$nbOctetsEmis = socket_sendto($sock, $chaine, strlen($chaine), 0, "172.20.21.55", 6454);
-		//$nbOctetsEmis = socket_sendto($sock, $chaine, strlen($chaine), 0, "192.168.1.202", 6454);
+		$nbOctetsEmis = socket_sendto($sock, $chaine, strlen($chaine), 0, "172.20.21.182", 6454);
+		//$nbOctetsEmis = socket_sendto($sock, $chaine, strlen($chaine), 0, "192.168.1.36", 6454);
         echo '<p>nombre d octets emis : '.$nbOctetsEmis.'</p>';
         socket_close($sock);
     }
